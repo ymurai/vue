@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Sample</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bulma.css">
+  <script src="lib/vue.js"></script>
+</head>
+<body style="width: 80%; margin: 0 auto;">
+
+  <header role="banner">
+    <h1>Sample system</h1>
+    <div id="user-1" class="nav-right">
+      <a href="#" class="fa fa-user">{{ username }}</a>
+    </div>
+    <nav role="navigation">
+      <ul id="nav-1" class="columns">
+        <li v-for="nav in navs" class="column">
+          <a href="#">{{ nav.menu }}</a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class="wrap">
+
+    <main role="main">
+
+      <article id="section-1">
+
+        <section v-for="section in sections" class="section columns">
+          <a href="#" class="column is-12">
+            <div class="columns">
+              <img :src=section.src :alt=section.alt class="column is-3">
+              <div  class="column is-9">
+                <h3>{{ section.title }}</h3>
+                <p class="column is-9">{{ section.text }}</p>
+              </div>
+            </div>
+          </a>
+        </section>
+
+      </article>
+
+    </main>
+
+    <aside role="supplement" class="supplement">
+      <h3>Appendix</h3>
+      <p>sample text.</p>
+    </aside>
+
+  </div>
+
+  <footer role="contentinfo">
+    <p>Copyright &copy; <time datetime="2018">2018</time> sample all right reserved.</p>
+  </footer>
+
+</body>
+
+<script src="data.js"></script>
+
+</html>
